@@ -1,0 +1,94 @@
+# https://countries.trevorblades.com/
+
+query getAllUsers{
+  users {
+    name
+    id
+    age
+    nationality
+    friends {
+      name
+    }
+  }
+}
+
+query GetUser($userId: ID!){
+  user(id: $userId) {
+    name
+    nationality
+    age
+    friends {
+      name
+    }
+  }
+}
+
+query GetAllMovies{
+  movies {
+    name
+    yearOfPublication
+  }
+}
+
+query GetMovie($name: String!){
+  movie(name: $name) {
+    name
+    yearOfPublication
+  }
+}
+
+query GetUser($userId: ID!){
+  user(id: $userId) {
+    name
+    favoriteMovies {
+      name
+      yearOfPublication
+    }
+  }
+}
+
+
+mutation createUser($input: CreateUserInput!){
+  createUser(input: $input) {
+    name
+    nationality
+    age
+  }
+}
+
+query getAllUsers{
+  users {
+    id
+    name
+    username
+  }
+}
+
+
+mutation($input: UpadteUsernameInput!){
+  updateUserName(input: $input) {
+    id
+    username
+  }
+}
+
+mutation($deleteUserId: ID!){
+  deleteUser(id: $deleteUserId) {
+    id
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
